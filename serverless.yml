@@ -7,26 +7,34 @@ provider:
   memorySize: 128
 
 functions:
-  node12:
-    handler: node12.handler
+  node:
+    handler: runtimes/nodejs12_x/node.handler
     runtime: nodejs12.x
     events:
       - http: get /node12
 
-  python3:
-    handler: python3.lambda_handler
+  python:
+    handler: runtimes/python3_8/python.lambda_handler
     runtime: python3.8
     events:
       - http: get /python3.8
 
-  ruby2:
-    handler: ruby2.lambda_handler
+  ruby:
+    handler: runtimes/ruby2_5/ruby.lambda_handler
     runtime: ruby2.5
     events:
       - http: get /ruby2.5
 
   golang:
-    handler: golang
+    handler: runtimes/go1_x/golang
     runtime: go1.x
     events:
       - http: get /golang
+
+  java:
+    package:
+      artifact: runtimes/java11/java-project/target/cloud-lambda-1.0.jar
+    handler: maxmode.lambda_runtimes_performance.APIRequestHandler::handleRequest
+    runtime: java11
+    events:
+      - http: get /java11
