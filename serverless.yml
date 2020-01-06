@@ -1,0 +1,32 @@
+service: lambda-runtimes-performance
+
+provider:
+  name: aws
+  stage: test
+  region: eu-west-1
+  memorySize: 128
+
+functions:
+  node12:
+    handler: node12.handler
+    runtime: nodejs12.x
+    events:
+      - http: get /node12
+
+  python3:
+    handler: python3.lambda_handler
+    runtime: python3.8
+    events:
+      - http: get /python3.8
+
+  ruby2:
+    handler: ruby2.lambda_handler
+    runtime: ruby2.5
+    events:
+      - http: get /ruby2.5
+
+  golang:
+    handler: golang
+    runtime: go1.x
+    events:
+      - http: get /golang
