@@ -1,0 +1,17 @@
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/appsettings.Development.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/appsettings.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/Properties/launchSettings.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.deps.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.runtimeconfig.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.runtimeconfig.dev.json
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.dll
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.pdb
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.csprojAssemblyReference.cache
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.RazorAssemblyInfo.cache
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.RazorAssemblyInfo.cs
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.AssemblyInfoInputs.cache
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.AssemblyInfo.cs
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.RazorTargetAssemblyInfo.cache
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.dll
+/Users/maxmode/my/lambda_runtimes_performance/runtimes/dotnetcore2_1/obj/release/netcoreapp2.1/rhel.7.2-x64/exampleservice.pdb

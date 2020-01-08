@@ -38,3 +38,11 @@ functions:
     runtime: java11
     events:
       - http: get /java11
+
+  dotnet:
+    package:
+      artifact: runtimes/dotnetcore2_1/bin/release/netcoreapp2.1/deploy-package.zip
+    handler: exampleservice::exampleservice.LambdaEntryPoint::FunctionHandlerAsync
+    runtime: dotnetcore2.1
+    events:
+      - http: get /dotnet2.1

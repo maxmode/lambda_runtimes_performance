@@ -1,0 +1,116 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1/rhel.7.2-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {},
+    ".NETCoreApp,Version=v2.1/rhel.7.2-x64": {
+      "exampleservice/1.0.0": {
+        "dependencies": {
+          "Amazon.Lambda.AspNetCoreServer": "2.1.0",
+          "Amazon.Lambda.Core": "1.0.0",
+          "Amazon.Lambda.Serialization.Json": "1.4.0"
+        },
+        "runtime": {
+          "exampleservice.dll": {}
+        }
+      },
+      "Amazon.Lambda.APIGatewayEvents/1.1.3": {
+        "runtime": {
+          "lib/netstandard1.3/Amazon.Lambda.APIGatewayEvents.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.1.3.0"
+          }
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer/2.1.0": {
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "1.1.3",
+          "Amazon.Lambda.Core": "1.0.0",
+          "Amazon.Lambda.Logging.AspNetCore": "2.0.0",
+          "Amazon.Lambda.Serialization.Json": "1.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.4.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Core/1.0.0": {
+        "runtime": {
+          "lib/netstandard1.3/Amazon.Lambda.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Logging.AspNetCore/2.0.0": {
+        "dependencies": {
+          "Amazon.Lambda.Core": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Amazon.Lambda.Serialization.Json/1.4.0": {
+        "dependencies": {
+          "Amazon.Lambda.Core": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Amazon.Lambda.Serialization.Json.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "exampleservice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Amazon.Lambda.APIGatewayEvents/1.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jNZomsksGKZ9R910IlLfxtF6vcpj7EI8Y1vuy++jJxzDIuO52ive1KLfdBtcccGKFUukDjUbQEiLQJoKPWJJDg==",
+      "path": "amazon.lambda.apigatewayevents/1.1.3",
+      "hashPath": "amazon.lambda.apigatewayevents.1.1.3.nupkg.sha512"
+    },
+    "Amazon.Lambda.AspNetCoreServer/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Tbx/HSHp48HNiOERYIthaYgOQWggQH50m+qj6TpTFsOqvcFE/84SWbDDbMHYHi7V2fViFZF9Cu+RA5IImVLzsA==",
+      "path": "amazon.lambda.aspnetcoreserver/2.1.0",
+      "hashPath": "amazon.lambda.aspnetcoreserver.2.1.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Core/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+pBYGHaOaDAhu2j8BA5MhKLwxZM7lgmTSroGyCzEqWMBx+uc+QtpED2ShCAkKjKeedXH+LvJpQAUkEtW7rfcgQ==",
+      "path": "amazon.lambda.core/1.0.0",
+      "hashPath": "amazon.lambda.core.1.0.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Logging.AspNetCore/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4uWzuZsVJOSYKg3hjDDVSNKobUS8uf8KrS0VvdTriu6JCXPvDPLaTLRa4orXB8rgDCBW5iin0D54zHiBloWe2w==",
+      "path": "amazon.lambda.logging.aspnetcore/2.0.0",
+      "hashPath": "amazon.lambda.logging.aspnetcore.2.0.0.nupkg.sha512"
+    },
+    "Amazon.Lambda.Serialization.Json/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6onwMtoj78Fy/LKTAeTxxEM+zPHG+UiIS1eiQX4TQsE9QNM0CvwRY0bPV9fP+ADVOQ6rdpXamh+CaGKwnpa07A==",
+      "path": "amazon.lambda.serialization.json/1.4.0",
+      "hashPath": "amazon.lambda.serialization.json.1.4.0.nupkg.sha512"
+    }
+  }
+}

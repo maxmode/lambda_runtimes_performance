@@ -22,5 +22,9 @@ class UserBehavior(TaskSet):
     def java(self):
         self.client.get("/java11", name="java11")
 
+    @task(1)
+    def dotnet(self):
+        self.client.get("/dotnet2.1", name="dotnet2.1")
+
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
