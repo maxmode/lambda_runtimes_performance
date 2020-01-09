@@ -8,7 +8,7 @@ Which Lambda runtime has lower cold starts / freeze startup?
 
 # Execution
 
-In order to test lambda performance - I've implemented a simple Lambda application 
+To test lambda performance - I've implemented a simple Lambda application 
 on all the runtimes (Golang, Python, Node, Java, Ruby, .Net).
 
 All Lambda functions are connected to API Gateway and can be tested as REST API.
@@ -17,15 +17,15 @@ For runtimes Node, Python and Ruby - source code was copied from AWS Console sam
 For Java, Go and .Net - source code was written from scratch.
 All implementations (on all languages) act the same - they just reply with text "Hello from Lambda!"
 
-As a testing tool - was choosen Locust. Test file is located in ```locustfile.py```
+As a testing tool - was chosen Locust. Tth test file is located in ```locustfile.py```
 
-The test was executed on AWS CodeBuild during 5 minutes. For the full results see section "Full results" below.
+The test was executed on AWS CodeBuild for 5 minutes. For the full results see section "Full results" below.
 
 ![Test setup diagram](setup_diagram.png?raw=true "Title")
 
-This test will check how fast AWS is able to spin up Lambda functions on different environments.
+This test will check how fast AWS can spin up Lambda functions in different runtimes.
 
-For cold starts - be aware that it depends on Lambda package size.
+For cold starts - be aware that it depends on the Lambda package size.
 Package size for of this sample application:
 - Node.js, Python, Ruby, Golang - 7.7Mb
 - Java - 1Mb
@@ -33,17 +33,41 @@ Package size for of this sample application:
 
 # Conclusion
 
-In terms of performance **Go (Golang) runtime appeared to be the fastest**. Golang is 11% faster then average in this test.
-**Second place for performance is Node.js**. Node is 7% faster then average.
+## Performance
+In terms of performance **Go (Golang) runtime appeared to be the fastest**. Golang is 11% faster than average in this test.
+**The second place for performance took Node.js**. Node is 7% faster than average.
 
-Least performing in our test appeared to be Ruby and Python runtimes.
+| Runtime    | Average performance | Fastest run, ms |
+|------------|---------|----------|
+| 🥇Golang   | 54ms    |     43ms |
+| 🥈Node.js  | 57ms    |     44ms |
+| 😐Python   | 60ms    |     45ms |
+| 😐Java     | 63ms    |     45ms |
+| 💩.Net     | 65ms    |     44ms |    
+| 💩Ruby     | 68ms    |     46ms |
 
+Least performing in our test appeared to be Ruby and .Net runtimes.
+
+## Cold Starts
 In terms of stability and minimum cold starts - clear winner is Golang 1.x runtime, 
-the maximum cold start for it was less then 280ms, next place is for Node 12.x runtime
- with cold start up to 412ms.
+the maximum cold start for it was less than 280ms, 
+The second place is shared between Node 12.x, Python 3.8 and Ruby2.5 
+with a maximum cold start around 400ms.
 
-The least stable appeared to be .Net (dotnetcore2.1, cold start 4948ms) and Java (java11, cold start 1097ms) 
+| Runtime    | Maximum cold start, ms |
+|------------|---------|
+| 🥇Golang   | 280ms    |
+| 🥈Ruby     | 400ms    |
+| 🥈Node.js  | 410ms    |
+| 🥈Python   | 460ms    |
+| 💩Java     | 1100ms   |
+| 💩.Net     | 4900ms   | 
 
+The least stable appeared to be .Net (dotnetcore2.1, cold start 4948ms) and Java (java11, cold start 1097ms)
+
+Based on this, Golang is the fastest Lambda runtime nowadays, followed by Node and Python, which are also OK.
+While Java, .Net, and Ruby are either slow either have an unpredictable cold starts, 
+so better stay away from these languages within Lambda environment.
 
 # Full results
 ```
@@ -85,7 +109,7 @@ Percentage of the requests completed within given times
 3. Go to AWS console -> Code Build (region Ireland)
 4. Create a new CodeBuild job.
     - As a source - specify this repository
-    - Buildspec - specify buildspec.yml from repository
+    - Buildspec - specify buildspec.yml from the repository
     - Environment variables: 
         - BASE_URL = {common url of your deployed APIs, should be in output on "sls deploy" command}
 5. Run the job    
