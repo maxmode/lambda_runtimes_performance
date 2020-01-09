@@ -1,14 +1,18 @@
-# What is tested?
+# Which Lambda runtime is faster? 
 
-Which Lambda environment is faster? Node, Python, Go, Ruby, Java or .Net?
-Which Lambda environment is more performance consistent?
-Which Lambda environment has lower cold starts / freeze startup?
+Node, Python, Go, Ruby, Java or .Net?
+
+Which Lambda runtime is more performance consistent?
+
+Which Lambda runtime has lower cold starts / freeze startup?
 
 # Execution
 
 In order to test lambda performance - I've implemented a simple Lambda application 
 on all the runtimes (Golang, Python, Node, Java, Ruby, .Net).
+
 All Lambda functions are connected to API Gateway and can be tested as REST API.
+
 For runtimes Node, Python and Ruby - source code was copied from AWS Console sample functions.
 For Java, Go and .Net - source code was written from scratch.
 All implementations (on all languages) act the same - they just reply with text "Hello from Lambda!"
