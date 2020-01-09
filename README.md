@@ -19,7 +19,17 @@ All implementations (on all languages) act the same - they just reply with text 
 
 As a testing tool - was choosen Locust. Test file is located in ```locustfile.py```
 
-The test was executed on AWS CodeBuild during 10 minutes. For the full results see section "Full results" below.
+The test was executed on AWS CodeBuild during 5 minutes. For the full results see section "Full results" below.
+
+![Test setup diagram](setup_diagram.png?raw=true "Title")
+
+This test will check how fast AWS is able to spin up Lambda functions on different environments.
+
+For cold starts - be aware that it depends on Lambda package size.
+Package size for of this sample application:
+- Node.js, Python, Ruby, Golang - 7.7Mb
+- Java - 1Mb
+- .Net - 82Kb
 
 # Conclusion
 
