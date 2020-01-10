@@ -43,7 +43,7 @@ The silver medal for performance took Python, and bronze - goes to Node.js**.
 |----------|--------- |--------------|-----------------------------------------|
 | 🥇 Golang   | 52ms 🥇  |  170ms 🥇    | Golang - best performance and stability |
 | 🥈 Python   | 68ms 🥈  |  190ms       | Python - golden middle |
-| 🥉 Node.js  | 75ms 🥈  |  190ms       | Node.js - performance competing with Python |
+| 🥉 Node.js  | 75ms 🥉  |  190ms       | Node.js - performance competing with Python |
 | .Net     | 52ms 🥇  |  730ms 💩💩💩| .Net - very fast but too many cold starts
 | Java     | 65ms     |  510ms 💩💩  | Java - many cold starts
 | Ruby     | 79ms 💩  |  210ms       | Ruby - the slowest |
