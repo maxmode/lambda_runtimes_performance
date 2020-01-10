@@ -8,4 +8,4 @@ phases:
       pip install locustio
   build:
     commands:
-      locust --host=$BASE_URL --no-web -r 10 -c 20 -t 300
+      locust --host=$BASE_URL --no-web -r 20 -c 60 -t 300

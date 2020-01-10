@@ -33,37 +33,24 @@ Package size for of this sample application:
 
 # Conclusion
 
-## Performance
-In terms of performance **Go (Golang) runtime appeared to be the fastest**. Golang is 11% faster than average in this test.
-**The second place for performance took Node.js**. Node is 7% faster than average.
+In terms of performance **Go (Golang) runtime appeared to be the fastest**. 
+Golang is 24% faster than average in this test. 
+Also Golang appeared to be the most stable, with minimum cold starts.
 
-| Runtime    | Average performance | Fastest run, ms |
-|------------|---------|----------|
-| 🥇Golang   | 54ms    |     43ms |
-| 🥈Node.js  | 57ms    |     44ms |
-| 😐Python   | 60ms    |     45ms |
-| 😐Java     | 63ms    |     45ms |
-| 💩.Net     | 65ms    |     44ms |    
-| 💩Ruby     | 68ms    |     46ms |
+The silver medal for performance took Python, and bronze - goes to Node.js**.
 
-Least performing in our test appeared to be Ruby and .Net runtimes.
+| Runtime  | Performance (top 80%) | Cold starts (top 99,9%) |  . |
+|----------|--------- |--------------|-----------------------------------------|
+| 🥇 Golang   | 52ms 🥇  |  170ms 🥇    | Golang - best performance and stability |
+| 🥈 Python   | 68ms 🥈  |  190ms       | Python - golden middle |
+| 🥉 Node.js  | 75ms 🥈  |  190ms       | Node.js - performance competing with Python |
+| .Net     | 52ms 🥇  |  730ms 💩💩💩| .Net - very fast but too many cold starts
+| Java     | 65ms     |  510ms 💩💩  | Java - many cold starts
+| Ruby     | 79ms 💩  |  210ms       | Ruby - the slowest |
 
-## Cold Starts
-In terms of stability and minimum cold starts - clear winner is Golang 1.x runtime, 
-the maximum cold start for it was less than 280ms, 
-The second place is shared between Node 12.x, Python 3.8 and Ruby2.5 
-with a maximum cold start around 400ms.
-
-| Runtime    | Maximum cold start, ms |
-|------------|---------|
-| 🥇Golang   | 280ms    |
-| 🥈Ruby     | 400ms    |
-| 🥈Node.js  | 410ms    |
-| 🥈Python   | 460ms    |
-| 💩Java     | 1100ms   |
-| 💩.Net     | 4900ms   | 
-
-The least stable appeared to be .Net (dotnetcore2.1, cold start 4948ms) and Java (java11, cold start 1097ms)
+.Net has too many cold starts, despite being same fast as Golang.
+Java also have a lot of cold starts.
+And least performing appeared to be the Ruby runtime.
 
 Based on this, Golang is the fastest Lambda runtime nowadays, followed by Node and Python, which are also OK.
 While Java, .Net, and Ruby are either slow either have an unpredictable cold starts, 
@@ -71,28 +58,28 @@ so better stay away from these languages within Lambda environment.
 
 # Full results
 ```
-Name               # reqs   # fails      Avg     Min     Max  |  Median   req/s  failures/s
----------------------------------------------------------------------------------------------------
- GET dotnet2.1     3214     0(0.00%)      65      44    4948  |      48   10.68    0.00
- GET golang        3214     0(0.00%)      54      43     276  |      48   10.68    0.00
- GET java11        3214     0(0.00%)      63      45    1097  |      50   10.68    0.00
- GET node12        3220     0(0.00%)      57      44     412  |      49   10.70    0.00
- GET python3.8     3219     0(0.00%)      60      45     456  |      53   10.69    0.00
- GET ruby2.5       3215     0(0.00%)      68      46     400  |      63   10.68    0.00
----------------------------------------------------------------------------------------------------
- Aggregated       19296     0(0.00%)      61      43    4948  |      50   64.11    0.00
+Name       # reqs      # fails     Avg     Min     Max  |  Median   req/s failures/s
+------------------------------------------------------------------------------------
+ dotnet2.1   9692     0(0.00%)      55      43    4184  |      48   32.19    0.00
+ golang      9694     0(0.00%)      53      43     248  |      48   32.20    0.00
+ java11      9694     0(0.00%)      58      43    1015  |      49   32.20    0.00
+ node12      9697     0(0.00%)      56      43     340  |      49   32.21    0.00
+ python3.8   9697     0(0.00%)      59      44     301  |      52   32.21    0.00
+ ruby2.5     9694     0(0.00%)      67      45     357  |      63   32.20    0.00
+------------------------------------------------------------------------------------
+ Aggregated 58168     0(0.00%)      58      43    4184  |      50  193.21    0.00
 
 Percentage of the requests completed within given times
- Type Name           # reqs    50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100%
---------------------------------------------------------------------------------------------------------
- GET  dotnet2.1       3214     48     49     51     52     78     81     86    100   4900   4900   4900
- GET  golang          3214     48     49     51     53     78     81     85    100    260    280    280
- GET  java11          3214     50     55     63     73     83    100    150    180    960   1100   1100
- GET  node12          3220     49     51     55     77     81     83     95    130    360    410    410
- GET  python3.8       3219     53     60     64     69     83     91     98    110    330    460    460
- GET  ruby2.5         3215     63     68     76     81     91     99    110    120    340    400    400
---------------------------------------------------------------------------------------------------------
- None Aggregated     19296     50     56     64     71     81     89    110    140    460   4900   4900
+ Name      # reqs    50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100%
+----------------------------------------------------------------------------------------------
+ dotnet2.1   9692     48     49     51     52     78     81     86    100    730   4200   4200
+ golang      9694     48     49     50     52     78     80     84     92    170    250    250
+ java11      9694     49     51     56     65     81     89    120    150    510   1000   1000
+ node12      9697     49     51     54     75     80     83     95    110    190    340    340
+ python3.8   9697     52     59     63     68     82     88     97    110    190    300    300
+ ruby2.5     9694     63     68     75     79     91     98    110    120    210    360    360
+----------------------------------------------------------------------------------------------
+Aggregated  58168     50     55     62     68     81     87    100    120    220   1400   4200
 ```
 
 # Reproduce test yourself
@@ -111,7 +98,7 @@ Percentage of the requests completed within given times
     - As a source - specify this repository
     - Buildspec - specify buildspec.yml from the repository
     - Environment variables: 
-        - BASE_URL = {common url of your deployed APIs, should be in output on "sls deploy" command}
+   - BASE_URL = {common url of your deployed APIs, should be in output on "sls deploy" command}
 5. Run the job    
 
 **Test results will be in the job's output.**
